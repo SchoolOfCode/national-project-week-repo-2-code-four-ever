@@ -4,7 +4,7 @@ import "./Day.css";
 function Day({ onClick }) {
   return (
     <div>
-      <h4 className="week">Week 1</h4>
+      <h3 className="week">Week 1</h3>
       <div className="day-div" onClick={onClick}>
         Day 1
       </div>
