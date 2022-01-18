@@ -41,6 +41,8 @@
 .modal-input {
   height: 3rem;
   width: 50%;
+  border-radius: 5px;
+  border: 1px solid rgb(53, 52, 52);
 }
 
 .close-button {

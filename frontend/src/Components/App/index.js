@@ -1,7 +1,8 @@
+import React from "react";
 import "./App.css";
 import { useState } from "react";
 import Modal from "../Modal/index";
-import React from "react";
+import Day from "../Day/index";
 function App() {
   const [show, setShow] = useState(false);
   function handleClick() {
@@ -9,8 +10,11 @@ function App() {
   }
   return (
     <div className="App">
-      <h2>Hello world</h2>
-      <button onClick={handleClick}>Get modal</button>
+      <h2>Resource Tracker</h2>
+      <Day onClick={handleClick} />
+      <Day onClick={handleClick} />
+      <Day onClick={handleClick} />
+
       <Modal onClose={() => setShow(false)} show={show} />
     </div>
   );
