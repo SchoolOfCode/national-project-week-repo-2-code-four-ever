@@ -5,53 +5,21 @@ import Day from "../Day/index";
 import Week from "../Week/index";
 
 function App() {
-  const data = [
-    { dayName: "Day1", title: "react", description: "useState" },
-    {
-      dayName: "Day2",
-      title: "javascript",
-      description: "map, reduce, filter",
-    },
+  const bootcampLength = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
   ];
-  const [show, setShow] = useState(false);
-
-  const [info, setInfo] = useState([]);
-  const [mockdata, setMockData] = useState(data);
-
-  useEffect(() => {
-    async function fetchInfo() {
-      const response = await fetch("url");
-      const data = await response.json();
-      setInfo(data);
-    }
-    fetchInfo();
-  }, []);
-
-  function handleClick() {
-    setShow(true);
-  }
 
   return (
     <div className="App">
-      <h2>Resource Tracker</h2>
-      {mockdata.map(function (item) {
+      <h1>Resource Tracker</h1>
+
+      {bootcampLength.map((item) => {
         return (
-          <Day
-            onClose={() => setShow(false)}
-            show={show}
-            title={item.title}
-            desc={item.description}
-            dayName={item.dayName}
-          />
+          <div>
+            <Week weekNumber={item} />
+          </div>
         );
       })}
-      <Week onClick={handleClick} />
-
-      {/* <Day onClose={() => setShow(false)} show={show} /> */}
-
-      {/* <Day onClick={handleClick} />
-      <Day onClick={handleClick} />
-      <Day onClick={handleClick} /> */}
     </div>
   );
 }

@@ -1,9 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Day.css";
 
 function Day(props) {
+  const data = [
+    { dayName: "Day1", title: "react", description: "useState" },
+    {
+      dayName: "Day2",
+      title: "javascript",
+      description: "map, reduce, filter",
+    },
+  ];
+
+  // const [info, setInfo] = useState([]);
+  const [mockdata, setMockData] = useState(data);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    async function fetchInfo() {
+      const response = await fetch("url");
+      const data = await response.json();
+      setMockData(data);
+    }
+    fetchInfo();
+  }, []);
+
   if (!props.show) {
     return null;
+  }
+
+  function handleClick() {
+    setShow(true);
   }
   return (
     <div className="modal" onClick={props.onClose}>
@@ -26,8 +52,15 @@ function Day(props) {
           <button className="modal-button">Read</button>
         </div>
         <div className="info">
-          <h3>{props.title}</h3>
-          <p>{props.desc}</p>
+          {mockdata.map((item) => {
+            return (
+              <div>
+                <h3> title={item.title} </h3>
+                <p>desc={item.description}</p>
+                <h2> dayName={item.dayName}</h2>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
