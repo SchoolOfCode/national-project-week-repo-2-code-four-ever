@@ -15,18 +15,19 @@ function Day(props) {
           <h2 className="modal-title">{props.dayName}</h2>
         </div>
         <div className="modal-body">
-          <div className="info">
-            <h3>{props.title}</h3>
-            <p>{props.desc}</p>
-          </div>
           <input className="modal-input-title" placeholder="Title" />
           <input className="modal-input" placeholder="Description" />
         </div>
+
         <div className="modal-footer">
           <button className="modal-button">Add</button>
           <button className="modal-button">Update</button>
           <button className="modal-button">Delete</button>
           <button className="modal-button">Read</button>
+        </div>
+        <div className="info">
+          <h3>{props.title}</h3>
+          <p>{props.desc}</p>
         </div>
       </div>
     </div>
