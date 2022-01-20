@@ -41,13 +41,14 @@ function App() {
 
   function handleClick() {
     async function getData() {
-      const resp = await fetch(`${API_URL}/alldata`);
+      const resp = await fetch(`${API_URL}/note/filter/${input.toLowerCase()}`);
       const fetchedData = await resp.json();
-      setFound([
-        ...fetchedData.noteTable
-          .filter((ob) => ob.title.toLowerCase() === input.toLowerCase())
-          .map((e) => "Day " + e.day_id),
-      ]);
+      // setFound([
+      //   ...fetchedData.noteTable
+      //     .filter((ob) => ob.title.toLowerCase() === input.toLowerCase())
+      //     .map((e) => "Day " + e.day_id),
+      // ]);ç
+      setFound([...fetchedData]);
     }
     if (input !== "" || undefined) {
       getData();
@@ -65,7 +66,7 @@ function App() {
       <h3>Quick search</h3>
       <input onChange={handleInput} type="text" />
       <Button action={handleClick} text="Search" />
-      {found ? found.map((item) => <p>{item}</p>) : ""}
+      {found ? found.map((item) => <p>{item.name}</p>) : ""}
       {bootcampLenght.map((item) => {
         return (
           <div>
