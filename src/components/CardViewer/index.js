@@ -116,13 +116,13 @@ const CardViewer = () => {
   function goHome() {
     navigate("/");
   }
-
+  
   return (
     <div className="card-div">
       <Button text="HOME" action={goHome} id="custom-btn" />
       <div id="input-wrapper">
         {data.length !== 0 ? (
-          <p id='data'>{data[1].date.toString()}</p>
+          <p id='data'>{data[0].date.toString()}</p>
         ) : (
           <p>Date not found</p>
         )}
