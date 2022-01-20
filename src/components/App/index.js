@@ -48,7 +48,16 @@ function App() {
       //     .filter((ob) => ob.title.toLowerCase() === input.toLowerCase())
       //     .map((e) => "Day " + e.day_id),
       // ]);ç
-      setFound([...fetchedData]);
+      const tempArr = fetchedData
+        .map((ob) => ob.name)
+        .map(
+          (e) =>
+            e[0].toUpperCase() +
+            e.substring(1, 3) +
+            " " +
+            e.substring(3, e.length)
+        );
+      setFound([...tempArr]);
     }
     if (input !== "" || undefined) {
       getData();
@@ -66,7 +75,7 @@ function App() {
       <h3>Quick search</h3>
       <input onChange={handleInput} type="text" />
       <Button action={handleClick} text="Search" />
-      {found ? found.map((item) => <p>{item.name}</p>) : ""}
+      {found ? found.map((item) => <p>{item}</p>) : ""}
       {bootcampLenght.map((item) => {
         return (
           <div>
