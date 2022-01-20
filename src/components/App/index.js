@@ -30,11 +30,11 @@ function App() {
 
   return (
     <div className="App">
-    <h1>Resources Tracker by Coding four-ever team</h1>
-    <h3>Quick search</h3>
+      <h1 className="header">Resources Tracker by Coding four-ever team</h1>
+      <h3>Quick search</h3>
       <input onChange={handleInput} type="text" />
       <Button action={handleClick} text="Search" />
-      {found ? found.map(item => <p>{item}</p>) : ""}
+      {found ? found.map((item) => <p>{item}</p>) : ""}
       {bootcampLenght.map((item) => {
         return (
           <div>
