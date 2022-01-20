@@ -1,27 +1,52 @@
-import React from 'react'
-import Card from '../Card'
+import React from "react";
+import Card from "../Card";
 
-const weekLength = [1,2,3,4,5];
+const weekLength = [1, 2, 3, 4, 5];
+const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+const topics = [
+  "Foundations",
+  "JavaScript",
+  "Front-end",
+  "Back-end",
+  "Databases",
+  "Testing",
+  "React Basics",
+  "React Advanced",
+  "Client Project",
+  "Agile",
+  "Computer Science",
+  "Architecture",
+  "Final Project",
+  "Final Project",
+  "Final Project",
+  "Final Project",
+];
 
-const style ={
-    display: "flex",
-    marginTop: "25px",
-}
+const style = {
+  display: "flex",
+  marginTop: "25px",
+};
 
-const Week = ({weeknumber}) => {
-    return (
-        <section>
-        <div><h2>Week {weeknumber}</h2></div>
-        
-        <div style={style}>
-            {weekLength.map((item)=> {
-                return <Card weeknumber={weeknumber} daynumber={item}/>
-            })}
+const Week = ({ weeknumber, previewData}) => {
+  return (
+    <section>
+      <div>
+        <h2>Week {weeknumber} - {topics[weeknumber-1]}</h2>
+      </div>
+      <div style={style}>
+        {weekLength.map((item) => {
+          return (
+            <Card
+              dayname={weekDays[item - 1]}
+              weeknumber={weeknumber}
+              daynumber={item}
+              previewData={previewData}
+            />
+          );
+        })}
+      </div>
+    </section>
+  );
+};
 
-            
-        </div>
-        </section>
-    )
-}
-
-export default Week
+export default Week;

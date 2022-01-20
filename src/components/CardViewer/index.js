@@ -16,7 +16,6 @@ const CardViewer = () => {
   const calculateDay = (wn - 1) * 5 + dn;
   // console.log("FINME", calculateDay);
 
-
   // Change some variable' names
   // Remember to change the db so that it returns order by id and to change the backend messages
   React.useEffect(() => {
