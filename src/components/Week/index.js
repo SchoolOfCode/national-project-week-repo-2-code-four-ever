@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../Card";
+import "./style.css";
 
 const weekLength = [1, 2, 3, 4, 5];
 const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
@@ -27,11 +28,13 @@ const style = {
   marginTop: "25px",
 };
 
-const Week = ({ weeknumber, previewData}) => {
+const Week = ({ weeknumber, previewData }) => {
   return (
-    <section>
+    <section id="week-wrapper">
       <div>
-        <h2>Week {weeknumber} - {topics[weeknumber-1]}</h2>
+        <h2>
+          Week {weeknumber} - {topics[weeknumber - 1]}
+        </h2>
       </div>
       <div style={style}>
         {weekLength.map((item) => {

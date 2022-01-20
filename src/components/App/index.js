@@ -24,13 +24,14 @@ function App() {
           .filter((ob) => ob.title.toLowerCase() === input.toLowerCase())
           .map((e) => "Day " + e.day_id),
       ]);
-      console.log(found);
     }
     getData();
   }
 
   return (
     <div className="App">
+    <h1>Resources Tracker by Coding four-ever team</h1>
+    <h3>Quick search</h3>
       <input onChange={handleInput} type="text" />
       <Button action={handleClick} text="Search" />
       {found ? found.map(item => <p>{item}</p>) : ""}
