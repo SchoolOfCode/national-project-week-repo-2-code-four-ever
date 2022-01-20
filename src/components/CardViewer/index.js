@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import Button from "../Button";
+import "./CardViewer.css";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -106,7 +107,7 @@ const CardViewer = () => {
   }
 
   return (
-    <div>
+    <div className="card-div">
       <input onChange={handleTitle} type="text" /> <br />
       <br />
       <input onChange={handleDescription} type="text" /> <br />
