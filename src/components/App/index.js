@@ -68,7 +68,7 @@ function App() {
         <p>{quote}</p>
       </header>
       <h3>Quick search</h3>
-      <input onChange={handleInput} type="text" />
+      <input placeholder="Search by title.." onChange={handleInput} type="text" />
       <Button action={handleClick} text="Search" />
       {found ? found.map((item) => <p>{item}</p>) : ""}
       {bootcampLenght.map((item) => {
