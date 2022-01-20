@@ -49,7 +49,11 @@ function App() {
           .map((e) => "Day " + e.day_id),
       ]);
     }
-    getData();
+    if (input !== "" || undefined) {
+      getData();
+    } else {
+      alert("Input is missing");
+    }
   }
 
   return (
