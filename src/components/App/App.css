@@ -87,3 +87,7 @@ input {
 input:hover {
   box-shadow: 2px 2px 8px 2px rgb(211, 205, 205);
 }
+
+h3 {
+  font-family: sans-serif;
+}
