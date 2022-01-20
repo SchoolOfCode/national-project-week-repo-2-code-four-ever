@@ -8,17 +8,13 @@ const API_URL = process.env.REACT_APP_API_URL;
 const CardViewer = () => {
   const { state } = useLocation();
   const { wn, dn } = state;
-  // console.log("HELLO", wn, dn);
 
   const [data, setData] = React.useState([]);
   const [titleInput, setTitleInput] = React.useState("");
   const [descriptionInput, setDescriptionInput] = React.useState("");
 
   const calculateDay = (wn - 1) * 5 + dn;
-  // console.log("FINME", calculateDay);
-
-  // Change some variable' names
-  // Remember to change the db so that it returns order by id and to change the backend messages
+  
   React.useEffect(() => {
     async function fetchData() {
       const resp = await fetch(`${API_URL}/note/day${calculateDay}`);

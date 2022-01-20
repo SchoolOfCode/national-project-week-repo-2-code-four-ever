@@ -43,11 +43,6 @@ function App() {
     async function getData() {
       const resp = await fetch(`${API_URL}/note/filter/${input.toLowerCase()}`);
       const fetchedData = await resp.json();
-      // setFound([
-      //   ...fetchedData.noteTable
-      //     .filter((ob) => ob.title.toLowerCase() === input.toLowerCase())
-      //     .map((e) => "Day " + e.day_id),
-      // ]);ç
       const tempArr = fetchedData
         .map((ob) => ob.name)
         .map(
@@ -62,9 +57,7 @@ function App() {
     if (input !== "" || undefined) {
       getData();
     } else {
-      
       alert("Input is missing");
-
     }
   }
 
