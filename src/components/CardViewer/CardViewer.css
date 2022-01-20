@@ -1,8 +1,18 @@
 .card-div {
   background-color: #003049;
   margin: auto;
-  margin-top: 10em;
-  width: 40%;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  width: 60%;
   padding: 3em;
   border-radius: 2em;
+  color: white;
+}
+
+#input-wrapper {
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
 }

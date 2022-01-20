@@ -41,6 +41,8 @@ const CardViewer = () => {
       title: titleInput,
       description: descriptionInput,
     };
+    setTitleInput("");
+    setDescriptionInput("");
     async function postData() {
       const response = await fetch(`${API_URL}/note/day${calculateDay}`, {
         headers: { "Content-Type": "application/json" },
@@ -99,6 +101,7 @@ const CardViewer = () => {
         .filter((el) => el !== -1);
       setData([...updatedData]);
     }
+
     if (titleInput === "" || undefined) {
       alert("Please insert a valid title");
     } else {
@@ -108,13 +111,27 @@ const CardViewer = () => {
 
   return (
     <div className="card-div">
-      <input onChange={handleTitle} type="text" /> <br />
-      <br />
-      <input onChange={handleDescription} type="text" /> <br />
-      <br />
-      <Button text="Add" action={addData} />
-      <Button text="Update" action={updateData} />
-      <Button text="Delete" action={deleteData} />
+      <div id="input-wrapper">
+        <input
+          onChange={handleTitle}
+          type="text"
+          placeholder="Insert title.."
+          name="title-input"
+        />{" "}
+        <br />
+        <br />
+        <input
+          onChange={handleDescription}
+          type="text"
+          placeholder="Insert description.."
+          name="description-input"
+        />{" "}
+        <br />
+        <br />
+        <Button text="Add" action={addData} />
+        <Button text="Update" action={updateData} />
+        <Button text="Delete" action={deleteData} />{" "}
+      </div>
       {data.map((item) => {
         return (
           <>

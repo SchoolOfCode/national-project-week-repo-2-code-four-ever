@@ -49,6 +49,10 @@ body {
   color: #a8dadc;
 }
 
+.header p {
+  color: white;
+}
+
 button {
   display: inline-block;
   padding: 0.2em 1em;
