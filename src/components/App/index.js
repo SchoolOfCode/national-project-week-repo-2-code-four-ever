@@ -62,7 +62,9 @@ function App() {
     if (input !== "" || undefined) {
       getData();
     } else {
+      
       alert("Input is missing");
+
     }
   }
 
