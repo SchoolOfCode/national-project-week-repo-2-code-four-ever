@@ -23,7 +23,7 @@ const CardViewer = () => {
     async function fetchData() {
       const resp = await fetch(`${API_URL}/note/day${calculateDay}`);
       const fetchedData = await resp.json();
-      setData(fetchedData);
+      setData([...fetchedData]);
     }
     fetchData();
   }, [calculateDay]);
@@ -41,8 +41,6 @@ const CardViewer = () => {
       title: titleInput,
       description: descriptionInput,
     };
-    setTitleInput("");
-    setDescriptionInput("");
     async function postData() {
       const response = await fetch(`${API_URL}/note/day${calculateDay}`, {
         headers: { "Content-Type": "application/json" },
@@ -50,12 +48,16 @@ const CardViewer = () => {
         body: JSON.stringify(tempData),
       });
       const responseMessage = await response.json();
-      alert(
+      console.log(
         "Message from server: \n" + JSON.stringify(responseMessage, null, 2)
       );
       setData([...data, tempData]);
     }
-    postData();
+    if (titleInput !== "" || undefined) {
+      postData();
+    } else {
+      alert("Please insert title");
+    }
   }
 
   function updateData() {
@@ -70,7 +72,7 @@ const CardViewer = () => {
         body: JSON.stringify(tempData),
       });
       const responseMessage = await response.json();
-      alert(
+      console.log(
         "Message from server: \n" + JSON.stringify(responseMessage, null, 2)
       );
       const updatedData = data.map((element) =>
@@ -93,7 +95,7 @@ const CardViewer = () => {
         body: JSON.stringify({ title: titleInput }),
       });
       const responseMessage = await response.json();
-      alert(
+      console.log(
         "Message from server: \n" + JSON.stringify(responseMessage, null, 2)
       );
       const updatedData = data
