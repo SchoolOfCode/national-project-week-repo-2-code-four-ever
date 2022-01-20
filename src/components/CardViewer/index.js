@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Button from "../Button";
 import "./CardViewer.css";
 
@@ -109,8 +109,15 @@ const CardViewer = () => {
     }
   }
 
+  let navigate = useNavigate();
+
+  function goHome() {
+    navigate("/");
+  }
+
   return (
     <div className="card-div">
+      <Button text="HOME" action={goHome} id="custom-btn" />
       <div id="input-wrapper">
         <input
           onChange={handleTitle}

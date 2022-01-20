@@ -16,3 +16,15 @@
 h3 {
   font-size: 20px;
 }
+
+#custom-btn {
+  background-color: #fca311;
+  color: #003049;
+  font-family: sans-serif;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  font-weight: 800;
+}
+#custom-btn:hover {
+  background-color: white;
+  color: black;
+}
