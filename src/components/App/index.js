@@ -29,10 +29,15 @@ const quotes = [
 function App() {
   const [input, setInput] = React.useState("");
   const [found, setFound] = React.useState(null);
+  const [quote, setQuote] = React.useState("");
 
   function handleInput(event) {
     setInput(event.target.value);
   }
+
+  React.useEffect(() => {
+    setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+  }, []);
 
   function handleClick() {
     async function getData() {
@@ -51,7 +56,7 @@ function App() {
     <div className="App">
       <header className="header">
         <h1>Resources Tracker by Coding four-ever team</h1>
-        <p>{quotes[Math.floor(Math.random() * quotes.length)]}</p>
+        <p>{quote}</p>
       </header>
       <h3>Quick search</h3>
       <input onChange={handleInput} type="text" />
