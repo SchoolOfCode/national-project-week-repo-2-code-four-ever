@@ -12,8 +12,8 @@ const Card = ({ weeknumber, daynumber, dayname }) => {
 
   return (
     <div id="card-id">
-      <h2>{dayname}</h2>
-      <h3>Day {(weeknumber - 1) * 5 + daynumber}</h3>
+      <h3>{dayname}</h3>
+      <p>Day {(weeknumber - 1) * 5 + daynumber}</p>
       <Button action={handleClick} text="Open" />
     </div>
   );

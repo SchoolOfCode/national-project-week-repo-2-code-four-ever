@@ -67,7 +67,7 @@ function App() {
         <h1>Resources Tracker by Coding four-ever team</h1>
         <p>{quote}</p>
       </header>
-      <h3>Quick search</h3>
+      <h2>Quick search</h2>
       <input placeholder="Search by title.." onChange={handleInput} type="text" />
       <Button action={handleClick} text="Search" />
       {found ? found.map((item) => <p>{item}</p>) : ""}

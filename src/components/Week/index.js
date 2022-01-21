@@ -32,7 +32,7 @@ const Week = ({ weeknumber, previewData }) => {
   return (
     <section id="week-wrapper">
       <div>
-        <h2>
+        <h2 id='week-id'>
           Week {weeknumber} - {topics[weeknumber - 1]}
         </h2>
       </div>
@@ -47,7 +47,9 @@ const Week = ({ weeknumber, previewData }) => {
             />
           );
         })}
+        
       </div>
+      <hr/>
     </section>
   );
 };
